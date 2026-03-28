@@ -1,4 +1,4 @@
-import mongoose from "monngoose";
+import mongoose from "mongoose";
 
 // 1) Create a schema
 // 2) Model based off of that schema
