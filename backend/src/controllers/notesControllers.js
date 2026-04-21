@@ -16,7 +16,7 @@ export const getOneNote = async (req, res) => {
     const note = await Note.findById(req.params.id);
 
     if (!note) return res.status(404).json({ message: "Note not found" });
-    res.status(200).json({ message: note });
+    res.status(200).json(note);
   } catch (error) {
     console.error("Error in getOneNote controller");
     res.status(500).json({ message: "Internal server error" });
@@ -29,7 +29,7 @@ export const createNote = async (req, res) => {
     const note = new Note({ title, content });
     const savedNote = await note.save();
 
-    res.status(201).json({ message: savedNote });
+    res.status(201).json(savedNote);
   } catch (error) {
     console.error("Error in createNote controller", error);
     res.status(500).json({ message: "internal server error" });
@@ -49,7 +49,7 @@ export const updateNote = async (req, res) => {
     );
     if (!updatedNote)
       return res.status(404).json({ message: "Note not found" });
-    res.status(200).json({ message: updatedNote });
+    res.status(200).json(updatedNote);
   } catch (error) {
     console.error("Error in updateNote controller", error);
     res.status(500).json({ message: "Internal server error" });
