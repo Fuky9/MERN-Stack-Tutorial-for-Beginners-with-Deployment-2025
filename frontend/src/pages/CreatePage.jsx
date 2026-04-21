@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router';
 import toast from 'react-hot-toast';
 import api from '../lib/axios';
+import Navbar from '../components/Navbar';
 
 
 const CreatePage = () => {
@@ -41,6 +42,7 @@ const CreatePage = () => {
   };
   return (
     <div className="min-h-screen bg-base-200 text-base-content">
+      <Navbar />
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">
           <Link to="/" className="btn btn-ghost mb-6">
