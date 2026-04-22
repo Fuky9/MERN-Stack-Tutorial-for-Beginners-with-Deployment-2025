@@ -1,4 +1,4 @@
-import {Route, Routes} from "react-router"
+import {Route, Routes, Navigate} from "react-router"
 import HomePage from './pages/HomePage'
 import NoteDetailPage from './pages/NoteDetailPage'
 import CreatePage from './pages/CreatePage'
@@ -11,6 +11,7 @@ const App = () => {
         <Route path="/" element={<HomePage />}/>
         <Route path="/create" element={<CreatePage />}/>
         <Route path="/note/:id" element={<NoteDetailPage />}/>
+        <Route path="*" element={<Navigate to="/" />} /> {/* Redirect any unknown routes to home */}
       </Routes>
     </div>
   )

@@ -18,6 +18,7 @@
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
+    "mern-stack-tutorial-for-beginners-with-deployment-2025": "file:..",
     "mongoose": "^9.3.3"
   },
   "devDependencies": {
