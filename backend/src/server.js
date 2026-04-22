@@ -35,17 +35,17 @@ app.use("/api/notes", notesRoutes);
 // Production setup
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+  app.use(express.static(path.join(__dirname, "frontend/dist")));
 
   // If no API route matches, serve the React app's index.html for client-side routing to work
   app.use((req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+    res.sendFile(path.join(__dirname, "frontend/dist/index.html"));
   });
 }
 
 // Connect to the database and then start the server
 connectDB().then(() => {
-  app.listen(5001, () => {
+  app.listen(PORT, () => {
     console.log("SERVER started on PORT:", PORT);
   });
 });
